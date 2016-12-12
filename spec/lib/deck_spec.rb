@@ -25,6 +25,7 @@ RSpec.describe Deck do
 
   describe "#shuffle!" do
     before(:each) do
+      #Always start the randomizer in the same place
       srand 1234
     end
 
@@ -50,4 +51,5 @@ RSpec.describe Deck do
       drawn_card = deck.draw!
       expect(drawn_card).to eq(first_card)
     end
+  end
 end

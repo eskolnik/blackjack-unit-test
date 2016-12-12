@@ -52,4 +52,5 @@ RSpec.describe Card do
         expect(non_face_card.face_card?).to be false
       end
     end
+  end
 end
