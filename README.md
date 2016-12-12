@@ -1,6 +1,14 @@
 Blackjack Unit Testing
 =============
 
+The code we wrote during the clinic is on the `clinic` branch.  
+
+The code I prepared beforehand is on the `master branch`.  
+
+
+Pilots vs Engineers
+============
+
 Pilot: Left inside main tire almost needs replacement.  
 Engineers: Almost replaced left inside main tire.
 
