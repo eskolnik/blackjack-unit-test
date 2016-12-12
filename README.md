@@ -1,9 +1,9 @@
 Blackjack Unit Testing
 =============
 
-The code we wrote during the clinic is on the `clinic` branch.  
+The code we wrote during the clinic is on the `clinic` branch. (https://github.com/eskolnik/blackjack-unit-test/tree/clinic)  
 
-The code I prepared beforehand is on the `master branch`.  
+The code I prepared beforehand is on the `master` branch.  
 
 
 Pilots vs Engineers
