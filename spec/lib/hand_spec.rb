@@ -7,12 +7,12 @@ require "spec_helper"
 # #add_card! => add a card to the hand
 
 RSpec.describe Hand do
-  let!(:ace1) { Card.new(:spade, "A") }
-  let!(:ace2) { Card.new(:heart, "A") }
-  let!(:jack1) { Card.new(:spade, "J") }
-  let!(:jack2) { Card.new(:heart, "J") }
-  let!(:four) { Card.new(:spade, "4") }
-  let!(:seven) { Card.new(:club, "7") }
+  let!(:ace1) { Card.new('♠', "A") }
+  let!(:ace2) { Card.new('♥', "A") }
+  let!(:jack1) { Card.new('♠', "J") }
+  let!(:jack2) { Card.new('♥', "J") }
+  let!(:four) { Card.new('♠', "4") }
+  let!(:seven) { Card.new('♣', "7") }
 
   describe "#cards" do
     let(:hand) { Hand.new([ace1, jack1]) }

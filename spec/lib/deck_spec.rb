@@ -1,10 +1,5 @@
 require "spec_helper"
 
-# Deck
-# #initialize #=> construct a Deck of 52 cards
-# #shuffle! #=> shuffles the remaining Cards in the deck
-# #draw! #=> removes and returns the top Card of the deck
-
 RSpec.describe Deck do
   let(:deck) { Deck.new }
 
@@ -18,25 +13,11 @@ RSpec.describe Deck do
     end
 
     it "contains 13 spades" do
-      spades = deck.cards.select { |card| card.suit == :spade }
-      expect(spades.count).to eq(52)
+      spades = deck.cards.select { |card| card.suit == '♠' }
+      expect(spades.count).to eq(13)
     end
   end
 
-  describe "#shuffle!" do
-    before(:each) do
-      #Always start the randomizer in the same place
-      srand 1234
-    end
-
-    it "randomizes the order of the deck" do
-      first_card = deck.cards.first
-      last_card = deck.cards.last
-      deck.shuffle!
-      expect(deck.cards.first).to_not eq(first_card)
-      expect(deck.cards.last).to_not eq(last_card)
-    end
-  end
 
   describe "#draw!" do
     it "removes the top card of the deck" do
@@ -52,4 +33,18 @@ RSpec.describe Deck do
       expect(drawn_card).to eq(first_card)
     end
   end
+  # describe "#shuffle!" do
+  #   before(:each) do
+  #     #Always start the randomizer in the same place
+  #     srand 1234
+  #   end
+  #
+  #   it "randomizes the order of the deck" do
+  #     first_card = deck.cards.first
+  #     last_card = deck.cards.last
+  #     deck.shuffle!
+  #     expect(deck.cards.first).to_not eq(first_card)
+  #     expect(deck.cards.last).to_not eq(last_card)
+  #   end
+  # end
 end

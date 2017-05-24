@@ -1,3 +1,5 @@
+require_relative 'card'
+
 class Hand
-  # Your code here
+  
 end
