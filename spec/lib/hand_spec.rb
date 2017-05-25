@@ -14,8 +14,10 @@ RSpec.describe Hand do
   let!(:four) { Card.new('♠', "4") }
   let!(:seven) { Card.new('♣', "7") }
 
+  let(:player_name) { "Almighty Bob" }
+
   describe "#cards" do
-    let(:hand) { Hand.new([ace1, jack1]) }
+    let(:hand) { Hand.new(player_name, [ace1, jack1]) }
 
     it "returns the cards in the hand" do
       expect(hand.cards).to contain_exactly(ace1, jack1) #matches array elements disregarding order
@@ -24,7 +26,7 @@ RSpec.describe Hand do
 
   describe "#value" do
     describe "for an empty hand" do
-      let(:hand) { Hand.new([]) }
+      let(:hand) { Hand.new(player_name, []) }
 
       it "returns 0" do
         expect(hand.value).to eq(0)
@@ -32,7 +34,7 @@ RSpec.describe Hand do
     end
 
     describe "for a hand with no face cards or aces" do
-      let(:hand) { Hand.new([seven, four]) }
+      let(:hand) { Hand.new(player_name, [seven, four]) }
 
       it "returns the value of the hand" do
         expect(hand.value).to eq(11)
@@ -40,7 +42,7 @@ RSpec.describe Hand do
     end
 
     describe "for a hand with multiple face cards" do
-      let(:hand) { Hand.new([jack1, jack2]) }
+      let(:hand) { Hand.new(player_name, [jack1, jack2]) }
 
       it "returns the value of the hand" do
         expect(hand.value).to eq(20)
@@ -48,7 +50,7 @@ RSpec.describe Hand do
     end
 
     describe "for a hand with multiple aces" do
-      let(:hand) { Hand.new([ace1, ace2, seven]) }
+      let(:hand) { Hand.new(player_name, [ace1, ace2, seven]) }
 
       it "returns the value of the hand" do
         expect(hand.value).to eq(19)
@@ -57,14 +59,14 @@ RSpec.describe Hand do
   end
 
   describe "#to_s" do
-    let(:hand) { Hand.new([ace1, jack1, seven]) }
+    let(:hand) { Hand.new(player_name, [ace1, jack1, seven]) }
     it "returns a string representation of the hand" do
       expect(hand.to_s).to eq("A, J, 7")
     end
   end
 
   describe "add_card!" do
-    let(:hand) { Hand.new([ace1, jack1, seven]) }
+    let(:hand) { Hand.new(player_name, [ace1, jack1, seven]) }
 
     it "adds a card to the hand" do
       hand.add_card!(ace2)

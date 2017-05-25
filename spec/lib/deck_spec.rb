@@ -21,16 +21,16 @@ RSpec.describe Deck do
 
   describe "#draw!" do
     it "removes the top card of the deck" do
-      first_card = deck.cards.first
+      top_card = deck.cards.last
       deck.draw!
       expect(deck.cards.count).to eq(51)
-      expect(deck.cards.first).not_to eq(first_card)
+      expect(deck.cards.last).not_to eq(top_card)
     end
 
     it "returns the drawn card" do
-      first_card = deck.cards.first
+      top_card = deck.cards.last
       drawn_card = deck.draw!
-      expect(drawn_card).to eq(first_card)
+      expect(drawn_card).to eq(top_card)
     end
   end
   # describe "#shuffle!" do

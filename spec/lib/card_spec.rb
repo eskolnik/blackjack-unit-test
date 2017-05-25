@@ -6,7 +6,7 @@ require "spec_helper"
 # #ace? => returns true if ace
 # #face_card => returns true if card is J, Q, or K
 
-RSpec.describe Card do
+describe Card do
   describe "#initialize" do
     let(:card) { Card.new('♠', 'A') }
 
